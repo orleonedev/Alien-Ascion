@@ -6,10 +6,15 @@
 	objectVersion = 55;
 	objects = {
 
+/* Begin PBXFileReference section */
+		51BD033D2714273E00A9C41C /* Alien-Ascion.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Alien-Ascion.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		51BD0336271426A500A9C41C = {
 			isa = PBXGroup;
 			children = (
+				51BD033D2714273E00A9C41C /* Alien-Ascion.playground */,
 			);
 			sourceTree = "<group>";
 		};
