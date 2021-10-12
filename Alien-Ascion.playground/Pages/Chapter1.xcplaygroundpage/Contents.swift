@@ -26,15 +26,13 @@ struct IntroView: View {
                                 introOpacity = 1.0
                             }
                         }
-                        .onDisappear{
-                            let fadeOut = Animation.easeIn(duration: 5)
-                            withAnimation(fadeOut){
-                                introOpacity = 0.0
-                            }
-                        }
                 
                 
             }.onTapGesture {
+                let fadeOut = Animation.easeIn(duration: 5)
+                withAnimation(fadeOut){
+                    introOpacity = 0.0
+                }
                 showText = false
                 scene1isOn = true
             }
@@ -43,27 +41,27 @@ struct IntroView: View {
                 ZStack{
                     Image(uiImage:#imageLiteral(resourceName: "Bg Ascion wAliens.jpg") )
                         .resizable()
-                        
+                        .scaledToFill()
                     
                     HStack{
                         Image(uiImage: #imageLiteral(resourceName: "Ascion-Sad.png"))
-                            .resizable()
-                            .scaledToFit()
+                            .resizable().scaledToFit()
+                            .frame(width: 300, height: 300)
+                            
                         
                         Image(uiImage: #imageLiteral(resourceName: "Aliens-Greys.png"))
-                            .resizable()
-                            .scaledToFit()
+                            .resizable().scaledToFit().frame(width: 300, height: 200)
+                            
                         
-                    }
-                    
+                    }//HStack
                     VStack{
                         Spacer()
                         Text("maremma maiala")
                             .font(.body)
                             .foregroundColor(.white)
                             .padding()
-                    }
-                }
+                    }//Vstack
+                }//Zstack ps:. provare col fade in anche qui?
                 
             }
             
