@@ -27,20 +27,20 @@ struct IntroView: View {
                         }
                     }
             }.onTapGesture {
-                Scene1()
+                //Scene1()
             }
     }.frame(width: 600, height: 400, alignment: .center)
     }
 }
 
 
-Struct Scene1: View {
-    var body: some View{
-        ZStack{
-            Rectangle().fill().foregroundColor(.blue)
-        }.frame(width: 600, height: 400, alignment: .center)
-    }
-}
+//Struct Scene1: View {
+//    var body: some View{
+//        ZStack{
+//            Rectangle().fill().foregroundColor(.blue)
+//        }.frame(width: 600, height: 400, alignment: .center)
+//    }
+//}
 
 let viewController = UIHostingController(rootView: IntroView())
 PlaygroundPage.current.setLiveView(viewController)
