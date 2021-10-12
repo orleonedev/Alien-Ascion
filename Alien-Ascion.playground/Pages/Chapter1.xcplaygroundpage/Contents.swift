@@ -30,8 +30,7 @@ struct IntroView: View {
                 withAnimation(fadeOut){
                     introOpacity = 0.0
                 }
-                
-                do{PlaygroundPage.current.setLiveView(Scene1View())}
+                PlaygroundPage.current.setLiveView(Scene1View())
             }//onTapVstack
         }//ZStack
         .frame(width: 700, height: 400, alignment: .center)
