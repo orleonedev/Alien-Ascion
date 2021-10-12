@@ -6,14 +6,14 @@ struct ContentView: View{ //dichiaro la scena con nome contentview
 //dichiaro funzioni e variabili che verranno richiamate
     var body: some View{
         ZStack{
-            Image(uiImage: #imageLiteral(resourceName: "Earth.jpeg"))
+            Image(uiImage: #imageLiteral(resourceName: "Earth.jpg"))
                 .resizable()
                 .frame(width: 300, height: 300)
                 .position(x: 300, y:150)
                 //richiamo la funzione del suono
             Spacer()
             ZStack{
-            Image(uiImage: #imageLiteral(resourceName:"Ascion Farm.jpeg"))
+                Image(uiImage: #imageLiteral(resourceName: "Ascion Farm.jpg"))
                 .resizable()
                 .frame(width: 300, height: 300)
                 .position(x:300, y:450)
@@ -23,3 +23,5 @@ struct ContentView: View{ //dichiaro la scena con nome contentview
 }
 
 PlaygroundPage.current.setLiveView(ContentView())
+
+
