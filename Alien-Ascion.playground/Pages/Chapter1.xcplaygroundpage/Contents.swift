@@ -148,7 +148,7 @@ struct Scene2View:View{
                     
                 }//ZStack
                 .onTapGesture {
-//                    PlaygroundPage.current.setLiveView(<#T##newLiveView: View##View#>)
+                    PlaygroundPage.current.setLiveView(Scene3View())
                 }
             }//VStack
         }//Zstack
@@ -156,6 +156,72 @@ struct Scene2View:View{
     }
 }
 
+struct Scene3View:View{
+    @State var dotNextScale :CGFloat = 1
+    @State var bgMovingScale: CGFloat = 1
+    var body: some View{
+        ZStack{
+            //BG
+            Image(uiImage:#imageLiteral(resourceName: "Bg Ascion Space.jpg") )
+                .resizable()
+                .scaleEffect(bgMovingScale)
+//                .scaledToFill()
+                .onAppear{
+                    let baseAnimation = Animation.easeInOut(duration: 5)
+                                    let repeated = baseAnimation.repeatForever(autoreverses: true)
+
+                                    withAnimation(repeated) {
+                                        bgMovingScale = 1.2
+                                    }
+                }
+            
+            VStack(alignment: .center){
+                
+                HStack(alignment: .center){
+                        Image(uiImage: #imageLiteral(resourceName: "Space-Ship.png"))
+                        .resizable().scaledToFit().frame(width: 200, height: 200)
+                    
+                    Image(uiImage: #imageLiteral(resourceName: "Planet-1.png"))
+                        .resizable().scaledToFit().frame(width: 200, height: 200)
+                    
+                    Image(uiImage: #imageLiteral(resourceName: "Planet-2.png"))
+                        .resizable().scaledToFit().frame(width: 200, height: 200)
+                    
+                    Image(uiImage: #imageLiteral(resourceName: "Planet-3.png"))
+                        .resizable().scaledToFit().frame(width: 200, height: 200)
+                }//HStack
+                
+                ZStack(alignment: .center){
+                    //TextBg
+                    Rectangle().foregroundColor(.blue.opacity(0.2)).blur(radius: 10).frame(width: 625, height: 125)
+                    
+                    //StoryText
+                    Text("Flying in space for days without any specific direction, he couldn’t find a Planet with forms of intelligent life.").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
+                    //Dot Next
+                    Circle().frame(width: 25, height: 25, alignment: .bottomTrailing)
+                        .scaleEffect(dotNextScale)
+                        .onAppear{
+                            let baseAnimation = Animation.easeInOut(duration: 1)
+                                            let repeated = baseAnimation.repeatForever(autoreverses: true)
+
+                                            withAnimation(repeated) {
+                                                dotNextScale = 0.5
+                                            }
+                        }//onAppear
+                        .offset(x: 275, y: 50).foregroundColor(.white)
+                    
+                }//ZStack
+                .onTapGesture {
+                    PlaygroundPage.current.finishExecution()
+                }
+            }//VStack
+        }//Zstack
+        .frame(width: 700, height: 400, alignment: .center)
+    }
+}
+
+
 PlaygroundPage.current.setLiveView(IntroView())
 
 
+//: [Next Chapter] (@next)
