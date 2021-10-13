@@ -266,7 +266,10 @@ struct Scene8View:View{
 
 struct Scene9View:View{
     @State var dotNextScale :CGFloat = 1
-    @State var bgMovingScale: CGFloat = 1
+    @State var bgMovingScale: CGFloat = 2
+    
+    @State var Scale1 :CGFloat = 1
+    
     var body: some View{
         ZStack{
             //BG
@@ -276,11 +279,11 @@ struct Scene9View:View{
                 .scaleEffect(bgMovingScale)
 //                .scaledToFill()
                 .onAppear{
-                    let baseAnimation = Animation.easeInOut(duration: 1.5)
+                    let baseAnimation = Animation.easeInOut(duration: 0.5)
                                     let repeated = baseAnimation.repeatForever(autoreverses: true)
 
                                     withAnimation(repeated) {
-                                        bgMovingScale = 1.2
+                                        bgMovingScale = 1.5
                                     }
                 }
             
@@ -290,7 +293,16 @@ struct Scene9View:View{
                 HStack(alignment: .center){
                     
                     Image(uiImage: #imageLiteral(resourceName: "Gun-LowBattery.png"))
-                    .resizable().scaledToFit().frame(width: 250, height: 250)
+                    .resizable().scaledToFit().frame(width: 220, height: 220)
+                    .scaleEffect(Scale1)
+                    .onAppear{
+                        let GunAnimation = Animation.easeInOut(duration: 0.5)
+                        let repeated = GunAnimation.repeatForever(autoreverses: true)
+                        withAnimation (repeated) {
+                            Scale1 = 1.4
+                        }
+                        
+                    }
                     
                     
                 }//HStack
