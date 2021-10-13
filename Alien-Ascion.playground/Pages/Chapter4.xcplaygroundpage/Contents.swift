@@ -1,10 +1,3 @@
-
-
-
-//In the end, Ascion returned to the farm with Bob and stops transforming himself, helping his friend without hiding his real nature. Now he is finally happy.
-     
-     
-              
 import SwiftUI
 import PlaygroundSupport
 import UIKit
