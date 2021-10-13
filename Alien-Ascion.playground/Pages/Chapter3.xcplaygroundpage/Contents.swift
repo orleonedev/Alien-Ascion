@@ -340,8 +340,8 @@ struct Scene10View:View{
     @State var dotNextScale :CGFloat = 1
     @State var bgMovingScale: CGFloat = 1
     
-    @State var OpAlien: CGFloat = 0
-    @State var OpHuman: CGFloat = 1
+    @State var OpAlien: CGFloat = 1
+    @State var OpHuman: CGFloat = 0
     
     var body: some View{
         ZStack{
@@ -367,25 +367,25 @@ struct Scene10View:View{
                     
                     ZStack(alignment: .center){
                         
-                    Image(uiImage: #imageLiteral(resourceName: "Ascion-Sad.png"))
+                    Image(uiImage: #imageLiteral(resourceName: "Human-Ascion.png"))
                     .resizable().scaledToFit().frame(width: 200, height: 200)
                     .opacity(OpAlien)
                     .onAppear{
                         let OpacityAnimation = Animation.easeInOut(duration: 1)
                         withAnimation (OpacityAnimation) {
-                            OpAlien = 1
+                            OpAlien = 0
                         }
                         
                     }
                         
                         
-                    Image(uiImage: #imageLiteral(resourceName: "Human-Ascion.png"))
+                    Image(uiImage: #imageLiteral(resourceName: "Ascion-Sad.png"))
                     .resizable().scaledToFit().frame(width: 200, height: 200)
                     .opacity(OpHuman)
                     .onAppear{
                         let OpacityAnimation = Animation.easeInOut(duration: 1)
                         withAnimation (OpacityAnimation) {
-                            OpHuman = 0
+                            OpHuman = 1
                         }
                         
                     }
@@ -393,8 +393,36 @@ struct Scene10View:View{
                         
                     }
                     
+                    ZStack(alignment: .center){
+                        
                     Image(uiImage: #imageLiteral(resourceName: "Bob.png"))
                     .resizable().scaledToFit().frame(width: 200, height: 200)
+                    .opacity(OpAlien)
+                    .onAppear{
+                        let OpacityAnimation = Animation.easeInOut(duration: 1)
+                        withAnimation (OpacityAnimation) {
+                            OpAlien = 0
+                        }
+                        
+                    }
+                        
+                        
+                    Image(uiImage: #imageLiteral(resourceName: "Bob-Surprised.png"))
+                    .resizable().scaledToFit().frame(width: 200, height: 200)
+                    .opacity(OpHuman)
+                    .onAppear{
+                        let OpacityAnimation = Animation.easeInOut(duration: 1)
+                        withAnimation (OpacityAnimation) {
+                            OpHuman = 1
+                        }
+                        
+                    }
+                    
+                        
+                    }
+
+//                    Image(uiImage: #imageLiteral(resourceName: "Bob.png"))
+//                    .resizable().scaledToFit().frame(width: 200, height: 200)
                     
                     
                 }//HStack
