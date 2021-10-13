@@ -11,7 +11,7 @@ struct IntroView: View {
         ZStack{
             Rectangle().fill().foregroundColor(Color.init(red: 0.01, green: 0.01, blue: 0.1))
             VStack{
-                    Text("III Episode")
+                    Text("Episode III")
                         .font(.body)
                         .foregroundColor(.cyan)
                         .padding()
