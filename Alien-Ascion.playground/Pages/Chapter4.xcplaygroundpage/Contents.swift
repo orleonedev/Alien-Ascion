@@ -10,6 +10,39 @@ import PlaygroundSupport
 import UIKit
 import CoreGraphics
 
+struct IntroView: View {
+    @State var introOpacity = 0.0
+    @State var hasTimeElapsed = false
+    
+    var body: some View {
+        
+        ZStack{
+            Rectangle().fill().foregroundColor(Color.init(red: 0.01, green: 0.01, blue: 0.1))
+            VStack{
+                    Text("IV Episode")
+                        .font(.body)
+                        .foregroundColor(.cyan)
+                        .padding()
+                        .opacity(introOpacity)
+                        .onAppear{
+                            let fadein = Animation.easeIn(duration: 3)
+                            withAnimation(fadein){
+                                introOpacity = 1.0
+                            }
+                        }
+            }//VStack
+            .onTapGesture {
+                let fadeOut = Animation.easeIn(duration: 3)
+                withAnimation(fadeOut){
+                    introOpacity = 0.0
+                }
+                PlaygroundPage.current.setLiveView(Scene1View())
+            }//onTapVstack
+        }//ZStack
+        .frame(width: 700, height: 400, alignment: .center)
+    }//body
+    
+}//IntroView
 
 struct Scene1View:View{
     @State var dotNextScale :CGFloat = 1
@@ -322,7 +355,7 @@ struct Scene3View:View{
                     
                 }//ZStack
                 .onTapGesture {
-                    PlaygroundPage.current.setLiveView(Scene1View())
+                    PlaygroundPage.current.setLiveView(IntroView())
                 }
             }//VStack
         }//Zstack
@@ -331,7 +364,7 @@ struct Scene3View:View{
 }
 
 
-PlaygroundPage.current.setLiveView(Scene1View())
+PlaygroundPage.current.setLiveView(IntroView())
 
 
 //: [Next Chapter] (@next)

@@ -2,6 +2,40 @@ import SwiftUI
 import PlaygroundSupport //per far funzionare le pagine di playground
 import AVFoundation //audio e video
 
+struct IntroView: View {
+    @State var introOpacity = 0.0
+    @State var hasTimeElapsed = false
+    
+    var body: some View {
+        
+        ZStack{
+            Rectangle().fill().foregroundColor(Color.init(red: 0.01, green: 0.01, blue: 0.1))
+            VStack{
+                    Text("II Episode")
+                        .font(.body)
+                        .foregroundColor(.cyan)
+                        .padding()
+                        .opacity(introOpacity)
+                        .onAppear{
+                            let fadein = Animation.easeIn(duration: 3)
+                            withAnimation(fadein){
+                                introOpacity = 1.0
+                            }
+                        }
+            }//VStack
+            .onTapGesture {
+                let fadeOut = Animation.easeIn(duration: 3)
+                withAnimation(fadeOut){
+                    introOpacity = 0.0
+                }
+                PlaygroundPage.current.setLiveView(Scene1View())
+            }//onTapVstack
+        }//ZStack
+        .frame(width: 700, height: 400, alignment: .center)
+    }//body
+    
+}//IntroView
+
 struct Scene1View: View{ //dichiaro la scena con nome contentview
 //dichiaro funzioni e variabili che verranno richiamate
     @State var introSize = 0.0
@@ -194,4 +228,4 @@ struct Scene3View:View{
         }
     }
 }
-PlaygroundPage.current.setLiveView(Scene1View())
+PlaygroundPage.current.setLiveView(IntroView())

@@ -2,6 +2,39 @@ import SwiftUI
 import PlaygroundSupport
 import UIKit
 
+struct IntroView: View {
+    @State var introOpacity = 0.0
+    @State var hasTimeElapsed = false
+    
+    var body: some View {
+        
+        ZStack{
+            Rectangle().fill().foregroundColor(Color.init(red: 0.01, green: 0.01, blue: 0.1))
+            VStack{
+                    Text("III Episode")
+                        .font(.body)
+                        .foregroundColor(.cyan)
+                        .padding()
+                        .opacity(introOpacity)
+                        .onAppear{
+                            let fadein = Animation.easeIn(duration: 3)
+                            withAnimation(fadein){
+                                introOpacity = 1.0
+                            }
+                        }
+            }//VStack
+            .onTapGesture {
+                let fadeOut = Animation.easeIn(duration: 3)
+                withAnimation(fadeOut){
+                    introOpacity = 0.0
+                }
+                PlaygroundPage.current.setLiveView(Scene7View())
+            }//onTapVstack
+        }//ZStack
+        .frame(width: 700, height: 400, alignment: .center)
+    }//body
+    
+}//IntroView
 
 struct Scene7View:View{
     @State var dotNextScale :CGFloat = 1
@@ -448,16 +481,18 @@ struct Scene10View:View{
                     
                 }//ZStack
                 .onTapGesture {
-                    //PlaygroundPage.current.setLiveView(Scene11View())
+                    //PlaygroundPage.current.setLiveView(Scene7View())
                 }
             }//VStack
         }//Zstack
         .frame(width: 700, height: 400, alignment: .center)
+        
+        
     }
 }
 
 
 
-PlaygroundPage.current.setLiveView(Scene7View())
+PlaygroundPage.current.setLiveView(IntroView())
 
 
