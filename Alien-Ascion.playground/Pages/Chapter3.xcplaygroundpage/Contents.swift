@@ -40,7 +40,7 @@ struct Scene7View:View{
                     Rectangle().foregroundColor(.blue.opacity(0.2)).blur(radius: 10).frame(width: 625, height: 125)
                     
                     //StoryText
-                    Text("The day after, Ascion talks to Bob, the farmer. Bob hires Ascion as his helper. Ascion was worried at first, but Bob turned out to be a really good man and accepted him into the house as a son. The two, so, become friends and their friendship get stronger and stronger...").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
+                    Text("The day after, Ascion talks to Bob, the farmer, which hires Ascion as his helper. At first, Ascion was a little worried, but Bob turned out to be a really good man and accepted him into the house as a son. So, the two became friends and their friendship get stronger and stronger...").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
                     //Dot Next
                     Circle().frame(width: 25, height: 25, alignment: .bottomTrailing)
                         .scaleEffect(dotNextScale)
