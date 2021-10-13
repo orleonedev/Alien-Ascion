@@ -90,8 +90,8 @@ struct Scene8View:View{
     @State var dotNextScale :CGFloat = 1
     @State var bgMovingScale: CGFloat = 1
     
-    @State var MuccaScale1 :CGFloat = 0.5
-    @State var MuccaScale2 :CGFloat = 1.5
+    @State var Scale1 :CGFloat = 0.4
+    @State var Scale2 :CGFloat = 1.5
     
     var body: some View{
         ZStack{
@@ -114,50 +114,63 @@ struct Scene8View:View{
                 
                 HStack(alignment: .center){
                 
+                    //Mucca1
                 Image(uiImage: #imageLiteral(resourceName: "Mucca.png"))
                     .resizable().scaledToFit().frame(width: 100, height: 100)
-                    .scaleEffect(MuccaScale1)
-                    .onAppear{
-                        let MuccaAnimation1 = Animation.easeInOut(duration: 5)
-                        let repeated = MuccaAnimation1.repeatForever(autoreverses: true)
-                        withAnimation (repeated) {
-                            MuccaScale1 = 1.5
-                        }
-                        
-                    }
+                    .rotationEffect(Angle(degrees: -10))
+    
                 
-                Image(uiImage: #imageLiteral(resourceName: "Mucca.png"))
-                    .resizable().scaledToFit().frame(width: 100, height: 100)
-                    .scaleEffect(MuccaScale2)
+                    .scaleEffect(Scale1)
                     .onAppear{
                         let MuccaAnimation1 = Animation.easeInOut(duration: 5)
                         let repeated = MuccaAnimation1.repeatForever(autoreverses: true)
                         withAnimation (repeated) {
-                            MuccaScale2 = 0.5
+                            Scale1 = 1.5
+                            
+                    
                         }
                         
                     }
                     
+                    
+                    //Mucca2
+                Image(uiImage: #imageLiteral(resourceName: "Mucca.png"))
+                    .resizable().scaledToFit().frame(width: 100, height: 100)
+                    .rotationEffect(Angle(degrees: -180))
+                    .scaleEffect(Scale2)
+                    .onAppear{
+                        let MuccaAnimation1 = Animation.easeInOut(duration: 5)
+                        let repeated = MuccaAnimation1.repeatForever(autoreverses: true)
+                        withAnimation (repeated) {
+                            Scale2 = 0.5
+                        }
+                        
+                    }
+                    
+                    //Mucca3
                     Image(uiImage: #imageLiteral(resourceName: "Mucca.png"))
-                        .resizable().scaledToFit().frame(width: 100, height: 100)
-                        .scaleEffect(MuccaScale1)
+                        .resizable().scaledToFit().frame(width: 80, height: 80)
+                        .rotationEffect(Angle(degrees: 280))
+                        .scaleEffect(Scale1)
                         .onAppear{
                             let MuccaAnimation1 = Animation.easeInOut(duration: 5)
                             let repeated = MuccaAnimation1.repeatForever(autoreverses: true)
                             withAnimation (repeated) {
-                                MuccaScale1 = 1.5
+                                Scale1 = 1
                             }
                             
                         }
                     
+                    //Mucca4
                     Image(uiImage: #imageLiteral(resourceName: "Mucca.png"))
                         .resizable().scaledToFit().frame(width: 100, height: 100)
-                        .scaleEffect(MuccaScale2)
+                        .rotationEffect(Angle(degrees: 10))
+                        .scaleEffect(Scale2)
                         .onAppear{
                             let MuccaAnimation1 = Animation.easeInOut(duration: 5)
                             let repeated = MuccaAnimation1.repeatForever(autoreverses: true)
                             withAnimation (repeated) {
-                                MuccaScale2 = 0.5
+                                Scale2 = 0.5
                             }
                             
                         }
@@ -168,18 +181,57 @@ struct Scene8View:View{
                     
                     Image(uiImage: #imageLiteral(resourceName: "pala.png"))
                     .resizable().scaledToFit().frame(width: 100, height: 100)
+                    .rotationEffect(Angle(degrees: 10))
+                    .scaleEffect(Scale2)
+                    .onAppear{
+                        let MuccaAnimation1 = Animation.easeInOut(duration: 5)
+                        let repeated = MuccaAnimation1.repeatForever(autoreverses: true)
+                        withAnimation (repeated) {
+                            Scale2 = 0.5
+                        }
+                        
+                    }
                     
                     Image(uiImage: #imageLiteral(resourceName: "Forcone.png"))
-                    .resizable().scaledToFit().frame(width: 100, height: 100)
+                    .resizable().scaledToFit().frame(width: 85, height: 85)
+                    .rotationEffect(Angle(degrees: -10))
+                    .scaleEffect(Scale1)
+                    .onAppear{
+                        let MuccaAnimation1 = Animation.easeInOut(duration: 5)
+                        let repeated = MuccaAnimation1.repeatForever(autoreverses: true)
+                        withAnimation (repeated) {
+                            Scale1 = 1
+                        }
+                        
+                    }
                     
                         Image(uiImage: #imageLiteral(resourceName: "Human-Ascion.png"))
                         .resizable().scaledToFit().frame(width: 100, height: 100)
                     
                     Image(uiImage: #imageLiteral(resourceName: "Fieno.png"))
-                    .resizable().scaledToFit().frame(width: 100, height: 100)
+                    .resizable().scaledToFit().frame(width: 60, height: 60)
+                    .rotationEffect(Angle(degrees: 60))
+                    .scaleEffect(Scale1)
+                    .onAppear{
+                        let MuccaAnimation1 = Animation.easeInOut(duration: 5)
+                        let repeated = MuccaAnimation1.repeatForever(autoreverses: true)
+                        withAnimation (repeated) {
+                            Scale1 = 1
+                        }
+                        
+                    }
                     
                     Image(uiImage: #imageLiteral(resourceName: "Fieno.png"))
-                    .resizable().scaledToFit().frame(width: 100, height: 100)
+                    .resizable().scaledToFit().frame(width: 70, height: 70)
+                    .scaleEffect(Scale2)
+                    .onAppear{
+                        let MuccaAnimation1 = Animation.easeInOut(duration: 5)
+                        let repeated = MuccaAnimation1.repeatForever(autoreverses: true)
+                        withAnimation (repeated) {
+                            Scale2 = 0.5
+                        }
+                        
+                    }
                     
                 }//HStack
                 
