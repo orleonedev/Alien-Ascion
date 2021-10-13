@@ -339,6 +339,10 @@ struct Scene9View:View{
 struct Scene10View:View{
     @State var dotNextScale :CGFloat = 1
     @State var bgMovingScale: CGFloat = 1
+    
+    @State var OpAlien: CGFloat = 0
+    @State var OpHuman: CGFloat = 1
+    
     var body: some View{
         ZStack{
             //BG
@@ -361,8 +365,33 @@ struct Scene10View:View{
                 
                 HStack(alignment: .center){
                     
+                    ZStack(alignment: .center){
+                        
                     Image(uiImage: #imageLiteral(resourceName: "Ascion-Sad.png"))
                     .resizable().scaledToFit().frame(width: 200, height: 200)
+                    .opacity(OpAlien)
+                    .onAppear{
+                        let OpacityAnimation = Animation.easeInOut(duration: 1)
+                        withAnimation (OpacityAnimation) {
+                            OpAlien = 1
+                        }
+                        
+                    }
+                        
+                        
+                    Image(uiImage: #imageLiteral(resourceName: "Human-Ascion.png"))
+                    .resizable().scaledToFit().frame(width: 200, height: 200)
+                    .opacity(OpHuman)
+                    .onAppear{
+                        let OpacityAnimation = Animation.easeInOut(duration: 1)
+                        withAnimation (OpacityAnimation) {
+                            OpHuman = 0
+                        }
+                        
+                    }
+                    
+                        
+                    }
                     
                     Image(uiImage: #imageLiteral(resourceName: "Bob.png"))
                     .resizable().scaledToFit().frame(width: 200, height: 200)
