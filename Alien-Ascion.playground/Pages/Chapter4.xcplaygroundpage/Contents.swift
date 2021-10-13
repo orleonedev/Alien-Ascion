@@ -40,7 +40,7 @@ struct Scene1View:View{
                     .blur(radius: 10).frame(width: 625, height: 125)
                     
                     //StoryText
-                    Text(".Ascion was sad as never before, he was afraid of being alone again. He couldn't see any light, any moment of joy for him...").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
+                    Text("Ascion was sad as never before, he was afraid of being alone again. He couldn't see any light, any moment of joy for him...").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
                     //Dot Next
                     Circle().frame(width: 25, height: 25, alignment: .bottomTrailing)
                         .scaleEffect(dotNextScale)
