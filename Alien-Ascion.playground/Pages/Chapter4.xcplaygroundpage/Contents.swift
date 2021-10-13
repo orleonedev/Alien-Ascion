@@ -6,11 +6,25 @@ struct ContentView1: View {
     @State var AscionSadOpacity = 0.0
     @State var dotNextScale :CGFloat = 1
     @State var introOpacity = 0.0
+    @State var bgMovingScale: CGFloat = 1
     
     var body: some View {
         
         ZStack{
-            Image(uiImage:#imageLiteral(resourceName: "Bg Ascion wAliens.jpg"))
+            Image(uiImage:#imageLiteral(resourceName: "Bg Ascion wAliens.jpg") )
+                .resizable()
+                .opacity(1)
+                .scaleEffect(bgMovingScale)
+//                .scaledToFill()
+                .onAppear{
+                    let baseAnimation = Animation.easeInOut(duration: 1.5)
+                                    let repeated = baseAnimation.repeatForever(autoreverses: true)
+
+                                    withAnimation(repeated) {
+                                        bgMovingScale = 1.2
+                                    }
+                }
+            
             Rectangle().foregroundColor(.init(red: 0.05, green: 0.05, blue: 0.5).opacity(0.5))
                 .position(x:400, y:125)
             .blur(radius: 10).frame(width: 900, height: 23)
@@ -22,7 +36,7 @@ struct ContentView1: View {
                         .frame(width: 250, height: 250)
                         .opacity(AscionSadOpacity)
                         .onAppear{
-                            let fadein = Animation.easeIn(duration: 3)
+                            let fadein = Animation.easeIn(duration: 1)
                             withAnimation(fadein) {AscionSadOpacity = 1.0}
                         }
                     VStack{
@@ -73,19 +87,23 @@ struct ContentView2: View {
         ZStack{
             Rectangle().foregroundColor(.init(red: 0.05, green: 0.05, blue: 0.5).opacity(0.5))
                 .position(x:400, y:162)
-                .blur(radius: 10).frame(width: 900, height: 100);      Image(uiImage:#imageLiteral(resourceName: "Bg Ascion wAliens.jpg"))
-                .opacity(0.25)
-                //.resizable()
+                .blur(radius: 10).frame(width: 900, height: 100);
+            
+            Image(uiImage:#imageLiteral(resourceName: "Bg Ascion wAliens.jpg") )
+                .resizable()
+                .opacity(0.5)
                 .scaleEffect(bgMovingScale)
 //                .scaledToFill()
                 .onAppear{
-                    let baseAnimation = Animation.easeInOut(duration: 5)
+                    let baseAnimation = Animation.easeInOut(duration: 20)
                                     let repeated = baseAnimation.repeatForever(autoreverses: true)
 
-withAnimation(repeated) {
-                                        bgMovingScale = 1.2
+                                    withAnimation(repeated) {
+                                        bgMovingScale = 2
                                     }
                 }
+            
+            
             VStack{
                 HStack{
     
@@ -93,10 +111,10 @@ withAnimation(repeated) {
                         Image(uiImage:#imageLiteral(resourceName: "Ascion-Happy.png"))
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 250, height: 250)
+                            .frame(width: 220, height: 220)
                             .opacity(AscionSadOpacity)
                             .onAppear{
-                                let fadein = Animation.easeIn(duration: 3)
+                                let fadein = Animation.easeIn(duration: 1)
                             withAnimation(fadein) {AscionSadOpacity = 1.0}
                             }
                 }
@@ -104,10 +122,10 @@ withAnimation(repeated) {
                             VStack{                            Image(uiImage:#imageLiteral(resourceName: "Bob.png"))
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 250, height: 250)
+                                .frame(width: 220, height: 220)
                                 .opacity(BobOpacity)
                                 .onAppear{
-                                    let fadein = Animation.easeIn(duration: 3)
+                                    let fadein = Animation.easeIn(duration: 1)
                                     withAnimation(fadein) {BobOpacity = 1.0}
                                 }
                             }
@@ -152,11 +170,11 @@ struct Scene8View:View{
                 .scaleEffect(bgMovingScale)
 //                .scaledToFill()
                 .onAppear{
-                    let baseAnimation = Animation.easeInOut(duration: 5)
+                    let baseAnimation = Animation.easeInOut(duration: 20)
                                     let repeated = baseAnimation.repeatForever(autoreverses: true)
 
                                     withAnimation(repeated) {
-                                        bgMovingScale = 1.2
+                                        bgMovingScale = 2
                                     }
                 }
             
