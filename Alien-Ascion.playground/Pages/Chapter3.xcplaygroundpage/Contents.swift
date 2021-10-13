@@ -95,7 +95,7 @@ struct Scene7View:View{
                     Rectangle().foregroundColor(.init(red: 0.05, green: 0.05, blue: 0.5).opacity(0.5)).blur(radius: 10).frame(width: 625, height: 125)
                     
                     //StoryText
-                    Text("The day after, Ascion talks to Bob, the farmer, which hires Ascion as his helper.At first, Ascion was a little worried, but Bob turned out to be a really good man and accepted him into the house as a son. So, the two became friends and their friendship get stronger and stronger...").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
+                    Text("The day after, Ascion met Bob the farmer and started working for him.").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
                     //Dot Next
                     Circle().frame(width: 25, height: 25, alignment: .bottomTrailing)
                         .scaleEffect(dotNextScale)
@@ -273,7 +273,7 @@ struct Scene8View:View{
                     Rectangle().foregroundColor(.init(red: 0.05, green: 0.05, blue: 0.5).opacity(0.5)).blur(radius: 10).frame(width: 625, height: 125)
                     
                     //StoryText
-                    Text("Every day Ascion would get up at dawn and help Bob with his work, also taking advantage of his Nebulizer and his telekinesis Powers. He was finally satisfied and happy with his life, and he considered Bob a friend. Bob seemed to feel the same too.").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
+                    Text("At work he used the Nebulizer and his telekinesis Powers. He started considering Bob a friend and Bob seemed to feel the same too.").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
                     //Dot Next
                     Circle().frame(width: 25, height: 25, alignment: .bottomTrailing)
                         .scaleEffect(dotNextScale)
@@ -345,7 +345,7 @@ struct Scene9View:View{
                     Rectangle().foregroundColor(.init(red: 0.05, green: 0.05, blue: 0.5).opacity(0.5)).blur(radius: 10).frame(width: 625, height: 125)
                     
                     //StoryText
-                    Text("One day, however, Ascion forgets to charge the Nebulizer: he went to work as usual, when suddenly he noticed he was again a blue alien.").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
+                    Text("One day Ascion forgot to charge the Nebulizer but he went to work as usual.").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
                     //Dot Next
                     Circle().frame(width: 25, height: 25, alignment: .bottomTrailing)
                         .scaleEffect(dotNextScale)
@@ -465,7 +465,7 @@ struct Scene10View:View{
                     Rectangle().foregroundColor(.init(red: 0.05, green: 0.05, blue: 0.5).opacity(0.5)).blur(radius: 10).frame(width: 625, height: 125)
                     
                     //StoryText
-                    Text("So, Bob finally discovered the real nature of the alien. Ascion, for fear of suffering the same oppression he had suffered on his planet, runs away...").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
+                    Text("Suddenly he was an Alien again and Bob saw him. Scared, Ascion ran away...").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
                     //Dot Next
                     Circle().frame(width: 25, height: 25, alignment: .bottomTrailing)
                         .scaleEffect(dotNextScale)

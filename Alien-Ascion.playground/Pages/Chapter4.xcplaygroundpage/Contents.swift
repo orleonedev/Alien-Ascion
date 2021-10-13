@@ -66,7 +66,7 @@ struct Scene1View:View{
                     .blur(radius: 10).frame(width: 625, height: 125)
                     
                     //StoryText
-                    Text("Ascion was sad as never before, he was afraid of being alone again. He couldn't see any light, any moment of joy for him...").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
+                    Text("...Ascion was sad as never before and he was afraid of being alone again.").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
                     //Dot Next
                     Circle().frame(width: 25, height: 25, alignment: .bottomTrailing)
                         .scaleEffect(dotNextScale)
@@ -151,7 +151,7 @@ struct Scene2View:View{
                     Rectangle().foregroundColor(.init(red: 0.05, green: 0.05, blue: 0.5).opacity(0.5)).blur(radius: 10).frame(width: 625, height: 125)
                     
                     //StoryText
-                    Text("...But Bob, however, managed to find the blue alien and calm him. He told him that that Ascion's being different dind't change anything in their friendship.").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
+                    Text("But Bob reached Ascion and told him that that the fact he was different dind't change anything in their friendship.").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
                     //Dot Next
                     Circle().frame(width: 25, height: 25, alignment: .bottomTrailing)
                         .scaleEffect(dotNextScale)
@@ -332,7 +332,7 @@ struct Scene3View:View{
                     Rectangle().foregroundColor(.init(red: 0.05, green: 0.05, blue: 0.5).opacity(0.5)).blur(radius: 10).frame(width: 625, height: 125)
                     
                     //StoryText
-                    Text("In the end, Ascion returned to the farm with Bob and stops transforming himself, helping his friend without hiding his real nature. Now he is finally happy...And  not alone anymore!").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
+                    Text("So, Ascion returned to the farm with Bob and stopped transforming himself.  Now he was finally happy... And  not alone anymore!").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
                     //Dot Next
                     Circle().frame(width: 25, height: 25, alignment: .bottomTrailing)
                         .scaleEffect(dotNextScale)

@@ -74,7 +74,7 @@ struct Scene1View:View{
                     .blur(radius: 10).frame(width: 625, height: 125)
                     
                     //StoryText
-                    Text("...There was Alien Ascion, belonging to the race of the Grays. But he was special: in fact, he was Blue, and for this reason he was not look kindly upon by others and even his own family tended to exclude him, mock him, make him feel different.").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
+                    Text("...There was Alien Ascion, belonging to the race of the Grays. But he was special: in fact, he was Blue, and for this reason he was not look kindly upon by others.").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
                     //Dot Next
                     Circle().frame(width: 25, height: 25, alignment: .bottomTrailing)
                         .scaleEffect(dotNextScale)
@@ -166,7 +166,7 @@ struct Scene2View:View{
                     Rectangle().foregroundColor(.init(red: 0.05, green: 0.05, blue: 0.5).opacity(0.5)).blur(radius: 10).frame(width: 625, height: 125)
                     
                     //StoryText
-                    Text("One day, tired of being kidded by everyone, he thought “I don’t need them!” and decided to leave his planet to go as far as possible from those individuals who hurt him so much since he was little.").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
+                    Text("One day he decided to leave his Native Planet and to go as far as possible in the Galaxy.").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
                     //Dot Next
                     Circle().frame(width: 25, height: 25, alignment: .bottomTrailing)
                         .scaleEffect(dotNextScale)
@@ -251,7 +251,7 @@ struct Scene3View:View{
                     Rectangle().foregroundColor(.init(red: 0.05, green: 0.05, blue: 0.5).opacity(0.5)).blur(radius: 10).frame(width: 625, height: 125)
                     
                     //StoryText
-                    Text("Flying in space for days without any specific direction, he couldn’t find a Planet with forms of intelligent life.").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
+                    Text("Flying in Space for days without any specific direction, he couldn’t find a Planet with forms of intelligent life.").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
                     //Dot Next
                     Circle().frame(width: 25, height: 25, alignment: .bottomTrailing)
                         .scaleEffect(dotNextScale)
