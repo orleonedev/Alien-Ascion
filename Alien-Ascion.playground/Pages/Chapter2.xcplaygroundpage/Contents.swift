@@ -224,6 +224,8 @@ struct Scene3View:View{
                     }//onAppear
                     .position(x: 625, y: 360)
                     .foregroundColor(.white)
+            }.onTapGesture {
+                PlaygroundPage.current.finishExecution()
             }
         }
     }

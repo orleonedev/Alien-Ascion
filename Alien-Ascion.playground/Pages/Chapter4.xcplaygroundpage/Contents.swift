@@ -355,7 +355,7 @@ struct Scene3View:View{
                     
                 }//ZStack
                 .onTapGesture {
-                    PlaygroundPage.current.setLiveView(IntroView())
+                    PlaygroundPage.current.finishExecution()
                 }
             }//VStack
         }//Zstack
