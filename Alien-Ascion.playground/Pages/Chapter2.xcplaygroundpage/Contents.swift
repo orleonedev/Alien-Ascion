@@ -108,6 +108,7 @@ struct Scene2View:View{
 }
 struct Scene3View:View{
     @State var dotNextScale :CGFloat = 1
+    @State var gunScale :CGFloat = 1
     @State var bgMovingScale: CGFloat = 1
     @State var OpAlien: CGFloat = 1
     @State var OpHuman: CGFloat = 0
@@ -131,10 +132,10 @@ struct Scene3View:View{
                 .resizable()
                 .scaledToFit()
                 .frame(width: 200, height: 200)
-                .position(x:370, y:170)
+                .position(x:460, y:165)
                 .opacity(OpHuman)
                 .onAppear{
-                                        let OpacityAnimation = Animation.easeInOut(duration: 3)
+                                        let OpacityAnimation = Animation.easeInOut(duration: 4)
                                         withAnimation (OpacityAnimation) {
                                             OpHuman = 1
                                         }
@@ -145,10 +146,10 @@ struct Scene3View:View{
                 .resizable()
                 .scaledToFit()
                 .frame(width: 200, height: 200)
-                .position(x:370, y:170)
+                .position(x:460, y:165)
                 .opacity(OpAlien)
                 .onAppear{
-                            let OpacityAnimation = Animation.easeInOut(duration: 1)
+                            let OpacityAnimation = Animation.easeInOut(duration: 4)
                                     withAnimation (OpacityAnimation) {
                                         OpAlien = 0
                                         }
@@ -157,23 +158,23 @@ struct Scene3View:View{
             Image(uiImage:#imageLiteral(resourceName: "Gun.png") )
                 .resizable()
                 .scaledToFit()
-                .frame(width: 200, height: 200)
-                .position(x:175, y:190)
-                .opacity(OpAlien)
+                .frame(width: 180, height: 180)
+                .position(x:250, y:190)
+                .scaleEffect(gunScale)
                 .onAppear{
-                            let OpacityAnimation = Animation.easeInOut(duration: 5)
-                                    withAnimation (OpacityAnimation) {
-                                        OpAlien = 0
-                                        }
-                                        
+                    let baseAnimation = Animation.easeInOut(duration: 1)
+                    let repeated = baseAnimation.repeatForever(autoreverses: true)
+                                    withAnimation(repeated) {
+                                        gunScale = 0.9
                                     }
+                }
             ZStack{
                 Rectangle()
                     .foregroundColor(.init(red: 0.05, green: 0.05, blue: 0.5).opacity(0.5))
                     .blur(radius: 10)
                     .frame(width: 625, height: 90)
                     .position(x:350, y:325)
-                Text("While he was getting off the spaceship, Ascion notices a strange object on the dashboard, the Nebulizer, a gun with extraordinary powers that previously belonged to his dad: so he use it to take the form of a human being and to hide his true appearance from others, for fear of being excluded once again.")
+                Text("While he was getting off the spaceship, Ascion notices a strange object, the Nebulizer: he uses it to take the form of a human being and to hide his true appearance from others, for fear of being excluded once again.")
                     .foregroundColor(.white)
                     .font(.body)
                     .frame(width: 600, height: 100)
