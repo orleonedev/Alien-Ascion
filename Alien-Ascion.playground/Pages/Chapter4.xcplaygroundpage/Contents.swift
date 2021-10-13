@@ -1,85 +1,84 @@
+
+
+
+//In the end, Ascion returned to the farm with Bob and stops transforming himself, helping his friend without hiding his real nature. Now he is finally happy.
+     
+     
+              
 import SwiftUI
 import PlaygroundSupport
 import UIKit
+import CoreGraphics
 
-struct ContentView1: View {
-    @State var AscionSadOpacity = 0.0
+
+struct Scene1View:View{
     @State var dotNextScale :CGFloat = 1
-    @State var introOpacity = 0.0
     @State var bgMovingScale: CGFloat = 1
-    
-    var body: some View {
+    var body: some View{
         
         ZStack{
+          //BG
             Image(uiImage:#imageLiteral(resourceName: "Bg Ascion wAliens.jpg") )
                 .resizable()
-                .opacity(1)
                 .scaleEffect(bgMovingScale)
-//                .scaledToFill()
                 .onAppear{
-                    let baseAnimation = Animation.easeInOut(duration: 1.5)
-                                    let repeated = baseAnimation.repeatForever(autoreverses: true)
-
-                                    withAnimation(repeated) {
-                                        bgMovingScale = 1.2
-                                    }
+                    let baseAnimation = Animation.easeInOut(duration: 5)
+                    let repeated = baseAnimation.repeatForever(autoreverses: true)
+                    withAnimation(repeated) {
+                        bgMovingScale = 1.2
+                    }
                 }
-
-            HStack{
-                VStack{
-                    Image(uiImage:#imageLiteral(resourceName: "Ascion-Sad.png"))
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 250, height: 250)
-                        .opacity(AscionSadOpacity)
-                        .onAppear{
-                            let fadein = Animation.easeIn(duration: 1)
-                            withAnimation(fadein) {AscionSadOpacity = 1.0}
-                        }
-                    VStack{
-                        
-                        ZStack(alignment: .center){
-                            //TextBg
-                            Rectangle().foregroundColor(.init(red: 0.05, green: 0.05, blue: 0.5).opacity(0.5)).blur(radius: 10).frame(width: 625, height: 125)
-                            
-                            //StoryText
-                            Text("Ascion was sad as never before, he was afraid of being alone again. He couldn't see any light, any moment of joy for him...").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
-                            //Dot Next
-                            Circle().frame(width: 25, height: 25, alignment: .bottomTrailing)
-                                .scaleEffect(dotNextScale)
-                                .onAppear{
-                                    let baseAnimation = Animation.easeInOut(duration: 1)
-                                                    let repeated = baseAnimation.repeatForever(autoreverses: true)
-
-                                                    withAnimation(repeated) {
-                                                        dotNextScale = 0.5
-                                                    }
-                                } //onAppear
-                                .offset(x: 275, y: 50).foregroundColor(.white)
-                        } //ZStack
-                    } //VStack
+            
+            VStack(alignment: .center){
                 
-            }
-        }.onTapGesture {
-            PlaygroundSupport.PlaygroundPage.current.setLiveView(ContentView2())
-        }
-        .frame(width: 600, height: 400, alignment: .center)
-    }
+                        Image(uiImage: #imageLiteral(resourceName: "Ascion-Sad.png"))
+                        .resizable().scaledToFit().frame(width: 200, height: 200)
+                
+                ZStack(alignment: .center){
+                    //TextBg
+                    Rectangle().foregroundColor(.init(red: 0.05, green: 0.05, blue: 0.5).opacity(0.5))
+                    .blur(radius: 10).frame(width: 625, height: 125)
+                    
+                    //StoryText
+                    Text(".Ascion was sad as never before, he was afraid of being alone again. He couldn't see any light, any moment of joy for him...").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
+                    //Dot Next
+                    Circle().frame(width: 25, height: 25, alignment: .bottomTrailing)
+                        .scaleEffect(dotNextScale)
+                        .onAppear{
+                            let baseAnimation = Animation.easeInOut(duration: 1)
+                                            let repeated = baseAnimation.repeatForever(autoreverses: true)
+
+                                            withAnimation(repeated) {
+                                                dotNextScale = 0.5
+                                            }
+                        }//onAppear
+                        .offset(x: 275, y: 50).foregroundColor(.white)
+                    
+                }//ZStack
+                .onTapGesture {
+                    PlaygroundPage.current.setLiveView(Scene2View())
+                }
+            }//VStack
+            
+        }//Zstack
+        .frame(width: 700, height: 400, alignment: .center)
         
+    }
 }
 
-
-
-
-struct ContentView2: View {
-    @State var bgMovingScale: CGFloat = 1
-    @State var AscionSadOpacity = 0.0
-    @State var BobOpacity = 0.0
+struct Scene2View:View{
     @State var dotNextScale :CGFloat = 1
+    @State var bgMovingScale: CGFloat = 1
+    
+    @State var H_AscionX : CGFloat = 230
+    @State var H_AscionY : CGFloat = 150
+    
+    @State var BobX : CGFloat = 300
+    @State var BobY : CGFloat = 150
     
     var body: some View{
         ZStack{
-            
+            //BG
             Image(uiImage:#imageLiteral(resourceName: "Bg Ascion wAliens.jpg") )
                 .resizable()
                 .opacity(0.5)
@@ -93,35 +92,35 @@ struct ContentView2: View {
                                         bgMovingScale = 2
                                     }
                 }
-    }
             
-            
-    VStack{
-                HStack{
-
-                        Image(uiImage:#imageLiteral(resourceName: "Ascion-Happy.png"))
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 220, height: 220)
-                            .opacity(AscionSadOpacity)
-                            .onAppear{
-                                let fadein = Animation.easeIn(duration: 1)
-                            withAnimation(fadein) {AscionSadOpacity = 1.0}
-                            }
-                            
-                        Image(uiImage:#imageLiteral(resourceName: "Bob.png"))
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 220, height: 220)
-                                .opacity(BobOpacity)
-                                .onAppear{
-                                    let fadein = Animation.easeIn(duration: 1)
-                                    withAnimation(fadein) {BobOpacity = 1.0}
-                                }
-                            }
-                } //VStack
+            VStack(alignment: .center){
                 
-    ZStack(alignment: .center){
+                HStack(alignment: .center){
+                        Image(uiImage: #imageLiteral(resourceName: "Ascion-Happy.png"))
+                        .resizable().scaledToFit().frame(width: 220, height: 220)
+                        .position(x: H_AscionX, y: H_AscionY)
+                        .onAppear{
+                            let H_AscionMove=Animation.easeIn(duration: 1)
+                            withAnimation(H_AscionMove){
+                                H_AscionX = 250
+                                H_AscionY = 150
+                            }
+                        }
+                    
+                    Image(uiImage: #imageLiteral(resourceName: "Bob.png"))
+                        .resizable().scaledToFit().frame(width: 220, height: 220)
+                        .position(x: BobX, y: BobY)
+                        .onAppear{
+                            let H_AscionMove=Animation.easeIn(duration: 1)
+                            withAnimation(H_AscionMove){
+                                BobX = 100
+                                BobY = 150
+                            }
+                        }
+                    
+                }//HStack
+                
+                ZStack(alignment: .center){
                     //TextBg
                     Rectangle().foregroundColor(.init(red: 0.05, green: 0.05, blue: 0.5).opacity(0.5)).blur(radius: 10).frame(width: 625, height: 125)
                     
@@ -137,19 +136,20 @@ struct ContentView2: View {
                                             withAnimation(repeated) {
                                                 dotNextScale = 0.5
                                             }
-                        } //onAppear
+                        }//onAppear
                         .offset(x: 275, y: 50).foregroundColor(.white)
                     
-                    .onTapGesture {
-                        PlaygroundSupport.PlaygroundPage.current.setLiveView(Scene8View())
-                    }.frame(width: 600, height: 400, alignment: .center)
-                    
-                } //ZStack
-    
+                }//ZStack
+                .onTapGesture {
+                    PlaygroundPage.current.setLiveView(Scene3View())
+                }
+            }//VStack
+        }//Zstack
+        .frame(width: 700, height: 400, alignment: .center)
+    }
+}
 
-            
-            
-struct Scene8View:View{
+struct Scene3View:View{
     @State var dotNextScale :CGFloat = 1
     @State var bgMovingScale: CGFloat = 1
     
@@ -157,7 +157,6 @@ struct Scene8View:View{
     @State var Scale2 :CGFloat = 1.5
     
     var body: some View{
-        
         ZStack{
             //BG
             Image(uiImage:#imageLiteral(resourceName: "Bg Ascion wAliens.jpg") )
@@ -166,11 +165,11 @@ struct Scene8View:View{
                 .scaleEffect(bgMovingScale)
 //                .scaledToFill()
                 .onAppear{
-                    let baseAnimation = Animation.easeInOut(duration: 20)
+                    let baseAnimation = Animation.easeInOut(duration: 5)
                                     let repeated = baseAnimation.repeatForever(autoreverses: true)
 
                                     withAnimation(repeated) {
-                                        bgMovingScale = 2
+                                        bgMovingScale = 1.2
                                     }
                 }
             
@@ -272,6 +271,9 @@ struct Scene8View:View{
                         Image(uiImage: #imageLiteral(resourceName: "Ascion-Happy.png"))
                         .resizable().scaledToFit().frame(width: 100, height: 100)
                     
+                    Image(uiImage: #imageLiteral(resourceName: "Bob.png"))
+                    .resizable().scaledToFit().frame(width: 100, height: 100)
+                    
                     Image(uiImage: #imageLiteral(resourceName: "Fieno.png"))
                     .resizable().scaledToFit().frame(width: 60, height: 60)
                     .rotationEffect(Angle(degrees: 60))
@@ -304,7 +306,7 @@ struct Scene8View:View{
                     Rectangle().foregroundColor(.init(red: 0.05, green: 0.05, blue: 0.5).opacity(0.5)).blur(radius: 10).frame(width: 625, height: 125)
                     
                     //StoryText
-                    Text("In the end, Ascion returned to the farm with Bob and stops transforming himself, helping his friend without hiding his real nature. Now he is finally happy.").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
+                    Text("In the end, Ascion returned to the farm with Bob and stops transforming himself, helping his friend without hiding his real nature. Now he is finally happy...And  not alone anymore!").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
                     //Dot Next
                     Circle().frame(width: 25, height: 25, alignment: .bottomTrailing)
                         .scaleEffect(dotNextScale)
@@ -315,12 +317,12 @@ struct Scene8View:View{
                                             withAnimation(repeated) {
                                                 dotNextScale = 0.5
                                             }
-                        } //onAppear
+                        }//onAppear
                         .offset(x: 275, y: 50).foregroundColor(.white)
                     
                 }//ZStack
                 .onTapGesture {
-                    PlaygroundPage.current.finishExecution()
+                    PlaygroundPage.current.setLiveView(Scene1View())
                 }
             }//VStack
         }//Zstack
@@ -329,7 +331,9 @@ struct Scene8View:View{
 }
 
 
+PlaygroundPage.current.setLiveView(Scene1View())
 
-    PlaygroundPage;.current.setLiveView(ContentView1())
-    
-}
+
+//: [Next Chapter] (@next)
+
+
