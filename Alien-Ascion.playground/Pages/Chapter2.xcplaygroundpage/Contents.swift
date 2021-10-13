@@ -101,13 +101,36 @@ struct Scene2View:View{
                     .foregroundColor(.white)
             }
             .onTapGesture {
-                PlaygroundPage.current.setLiveView(Scene2View())
+                PlaygroundPage.current.setLiveView(Scene3View())
             }
-            
+        }
+    }
+}
+struct Scene3View:View{
+    @State var dotNextScale :CGFloat = 1
+    @State var bgMovingScale: CGFloat = 1
+    var body: some View{
+        ZStack{
+            //BG
+            Image(uiImage:#imageLiteral(resourceName: "Bg Ascion wAliens.jpg") )
+                .resizable()
+                .opacity(0.5)
+                .scaleEffect(bgMovingScale)
+                .onAppear{
+                    let baseAnimation = Animation.easeInOut(duration: 20)
+                                let repeated = baseAnimation.repeatForever(autoreverses: true)
+
+                                    withAnimation(repeated) {
+                                        bgMovingScale = 2
+                                    }
+                }
+                .frame(width: 700, height: 400, alignment: .center)
+            Image(uiImage:#imageLiteral(resourceName: "Ascion-Happy.png") )
+                .resizable()
+                .scaledToFit()
+                .frame(width: 200, height: 200)
+                .position(x:380, y: 180)
         }
     }
 }
 PlaygroundPage.current.setLiveView(Scene1View())
-
-
-
