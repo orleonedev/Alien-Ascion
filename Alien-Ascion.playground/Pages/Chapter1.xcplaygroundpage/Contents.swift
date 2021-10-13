@@ -207,10 +207,10 @@ struct Scene3View:View{
                 .resizable()
                 .scaleEffect(bgMovingScale)
                 .onAppear{
-                    let baseAnimation = Animation.easeInOut(duration: 2)
+                    let baseAnimation = Animation.easeInOut(duration: 5)
                     let repeated = baseAnimation.repeatForever(autoreverses: true)
                     withAnimation(repeated) {
-                            bgMovingScale = 1.5
+                        bgMovingScale = 1.2
                             }
                 }
             
