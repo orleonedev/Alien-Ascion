@@ -12,7 +12,7 @@ struct IntroView: View {
             Rectangle().fill().foregroundColor(Color.init(red: 0.01, green: 0.01, blue: 0.1))
             VStack{
                     Text("Episode III")
-                        .font(.body)
+                        .font(.title)
                         .foregroundColor(.cyan)
                         .padding()
                         .opacity(introOpacity)
@@ -23,15 +23,16 @@ struct IntroView: View {
                             }
                         }
             }//VStack
-            .onTapGesture {
-                let fadeOut = Animation.easeIn(duration: 3)
-                withAnimation(fadeOut){
-                    introOpacity = 0.0
-                }
-                PlaygroundPage.current.setLiveView(Scene7View())
-            }//onTapVstack
+            
         }//ZStack
         .frame(width: 700, height: 400, alignment: .center)
+        .onTapGesture {
+            let fadeOut = Animation.easeIn(duration: 3)
+            withAnimation(fadeOut){
+                introOpacity = 0.0
+            }
+            PlaygroundPage.current.setLiveView(Scene7View())
+        }//onTapVstack
     }//body
     
 }//IntroView
