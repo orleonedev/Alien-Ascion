@@ -82,6 +82,7 @@ struct Scene1View:View{
                         .offset(x: 275, y: 50).foregroundColor(.white)
                     
                 }//ZStack
+                .offset(x: 0, y: 5)
                 .onTapGesture {
                     PlaygroundPage.current.setLiveView(Scene2View())
                 }
@@ -124,7 +125,7 @@ struct Scene2View:View{
                 
                 HStack(alignment: .center){
                         Image(uiImage: #imageLiteral(resourceName: "Ascion-Happy.png"))
-                        .resizable().scaledToFit().frame(width: 220, height: 220)
+                        .resizable().scaledToFit().frame(width: 200, height: 200)
                         .position(x: H_AscionX, y: H_AscionY)
                         .onAppear{
                             let H_AscionMove=Animation.easeIn(duration: 1)
@@ -135,7 +136,7 @@ struct Scene2View:View{
                         }
                     
                     Image(uiImage: #imageLiteral(resourceName: "Bob.png"))
-                        .resizable().scaledToFit().frame(width: 220, height: 220)
+                        .resizable().scaledToFit().frame(width: 200, height: 200)
                         .position(x: BobX, y: BobY)
                         .onAppear{
                             let H_AscionMove=Animation.easeIn(duration: 1)
@@ -167,6 +168,7 @@ struct Scene2View:View{
                         .offset(x: 275, y: 50).foregroundColor(.white)
                     
                 }//ZStack
+                .offset(x: 0, y: -20)
                 .onTapGesture {
                     PlaygroundPage.current.setLiveView(Scene3View())
                 }
@@ -348,6 +350,7 @@ struct Scene3View:View{
                         .offset(x: 275, y: 50).foregroundColor(.white)
                     
                 }//ZStack
+                .offset(x: 0, y: 5)
                 .onTapGesture {
                     PlaygroundPage.current.finishExecution()
                 }

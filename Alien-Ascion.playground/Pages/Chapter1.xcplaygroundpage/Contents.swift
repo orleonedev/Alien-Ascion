@@ -266,6 +266,7 @@ struct Scene3View:View{
                         .offset(x: 275, y: 50).foregroundColor(.white)
                     
                 }//ZStack
+                .offset(x: 0, y: 5)
                 .onTapGesture {
                     PlaygroundPage.current.finishExecution()
                 }
