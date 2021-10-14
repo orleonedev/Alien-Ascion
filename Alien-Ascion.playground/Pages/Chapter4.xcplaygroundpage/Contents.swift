@@ -153,7 +153,7 @@ struct Scene2View:View{
                     Rectangle().foregroundColor(.init(red: 0.05, green: 0.05, blue: 0.5).opacity(0.5)).blur(radius: 10).frame(width: 625, height: 125)
                     
                     //StoryText
-                    Text("But Bob reached Ascion and told him that that the fact he was different dind't change anything in their friendship.").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
+                    Text("But Bob reached Ascion and told him that the fact he was different didn't change anything in their friendship.").foregroundColor(.white).font(.body).frame(width: 600, height: 100)
                     //Dot Next
                     Circle().frame(width: 25, height: 25, alignment: .bottomTrailing)
                         .scaleEffect(dotNextScale)
