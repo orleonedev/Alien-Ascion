@@ -2,6 +2,8 @@ import SwiftUI
 import PlaygroundSupport
 import UIKit
 
+//: [Previous Chapter](@previous)
+
 struct IntroView: View {
     @State var introOpacity = 0.0
     @State var hasTimeElapsed = false
@@ -499,4 +501,5 @@ struct Scene10View:View{
 
 PlaygroundPage.current.setLiveView(IntroView())
 
+//: [Next Chapter](@next)
 

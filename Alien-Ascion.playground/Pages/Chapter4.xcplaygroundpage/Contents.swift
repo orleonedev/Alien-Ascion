@@ -3,6 +3,8 @@ import PlaygroundSupport
 import UIKit
 import CoreGraphics
 
+//: [Previous Chapter](@previous)
+
 struct IntroView: View {
     @State var introOpacity = 0.0
     @State var hasTimeElapsed = false

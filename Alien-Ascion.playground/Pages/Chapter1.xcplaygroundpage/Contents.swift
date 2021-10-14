@@ -280,5 +280,5 @@ struct Scene3View:View{
 PlaygroundPage.current.setLiveView(IntroView())
 
 
-//: [Next Chapter] (@next)
+//: [Next Chapter](@next)
 

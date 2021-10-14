@@ -2,6 +2,8 @@ import SwiftUI
 import PlaygroundSupport //per far funzionare le pagine di playground
 import AVFoundation //audio e video
 
+//: [Previous Chapter](@previous)
+
 struct IntroView: View {
     @State var introOpacity = 0.0
     @State var hasTimeElapsed = false
@@ -232,3 +234,5 @@ struct Scene3View:View{
     }
 }
 PlaygroundPage.current.setLiveView(IntroView())
+
+//: [Next Chapter](@next)
